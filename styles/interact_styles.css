@@ -1,0 +1,25 @@
+body {
+	background-color: green;
+	margin: 0;
+}
+
+#container {
+	margin: 0 auto;
+	width: 1080px;
+	background-color: white;
+}
+
+#playground {
+	margin: 0 auto;
+	width: 700px;
+	height: 700px
+}
+
+#line-1, #line-2 {
+	background-color: black;
+	width: 15%;
+	height: 30%;
+	min-height: 6em;
+	margin: 10%;
+	color: pink;
+}
