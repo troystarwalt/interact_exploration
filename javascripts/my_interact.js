@@ -44,7 +44,7 @@ interact('.redrag')
 
 	.resizable({
 		preserveAspectRatio: true,
-		edges: {left: true, right: true, bottom: true, top: true},
+		edges: {left: false, right: false, bottom: true, top: true},
 		invert: 'reposition',
 		snap: {
 	    	targets: [
@@ -74,14 +74,33 @@ interact('.redrag')
 	});
 
 //Practice on drag zone, snapping, resizing and draggin.
+interact('.dragzone')
+	.draggable({
+	    // enable inertial throwing
+	    inertia: true,
+	    // keep the element within the area of it's parent
+	    restrict: {
+	    	restriction: "#container",
+	    	endOnly: true,
+	    	elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+	    },
+	    // enable autoScroll
+	    autoScroll: true,
+
+	    // call this function on every dragmove event
+	    onmove: dragMoveListener
+	});
+
 interact('.dropzone').dropzone({
-	accept: '.dropzone',
-	overlap: 'pointer',
+
+	accept: '.dragzone',
+	overlap: 'pointer' || 'center' || zeroToOne,
 
 	ondropactivate: function (event) {
 		event.target.classList.add('drop-active');
+		console.log("hi");
 	},
-	onragenter: function (event) {
+	ondragenter: function (event) {
 		var draggableElement = event.relatedTarget,
 		dropzoneElement = event.target;
 
@@ -91,14 +110,13 @@ interact('.dropzone').dropzone({
 	ondragleave: function (event) {
 		event.target.classList.remove('drop-target');
 		event.relatedTarget.classList.remove('can-drop');
-	};
-	ondrop: function (event) {
-		event.relatedTarget.classList.add('dropped');
 	},
-	ondropdeactive: function (event) {
+	ondrop: function (event) {
+		event.relatedTarget.textContent = 'Dropped';
+	},
+	ondropdeactivate: function (event) {
 		event.target.classList.remove('dro-active');
 		event.target.classList.remove('drop-target');
-		event.taget.classList.remove('dropped');
 	}
 });
 
