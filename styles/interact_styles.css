@@ -1,22 +1,28 @@
+
 body {
 	background-color: green;
 	margin: 0;
 }
 
+/*Main container. Also where we don't allow 
+pieces to be dragged out of.*/
 #container {
 	margin: 0 auto;
 	width: 1080px;
 	background-color: pink;
 }
 
+/*Storing the divs prior to use.*/
 #toy-chest {
 	background-color: silver;
 }
 
+/*Put our divs/elemtns in a nice order*/
 #toy-chest > div{
 	display: inline-block;
 }
 
+/*Pre-drop zone*/
 #parentszone {
 	border: 1px solid blue;
 	background-color: grey;
@@ -27,6 +33,7 @@ body {
 	height: 1000px;
 }
 
+/*Drop zone*/
 #playground {
 	margin: 0 auto;
 	width: 700px;
@@ -34,6 +41,7 @@ body {
 	background-color: white;
 }
 
+/*basic css styled lines*/
 #line-1, #line-2, #line-3 {
 	background-color: black;
 	width: 1%;
@@ -44,6 +52,7 @@ body {
     transform: translate(0px, 0px);
 }
 
+/* Basic css styled boxes*/
 #box-1, #box-2 {
 	border: 1px solid black;
 	width: 30%;
@@ -52,6 +61,7 @@ body {
     transform: translate(0px, 0px);
 }
 
+/* Basic css styled boxes*/
 #circle-1 {
 	border-radius: 50%;
 	border: 1px solid black;
@@ -60,9 +70,11 @@ body {
 	min-height: 2em;
 }
 
+/*Div styling for the home and index*/
 #playground > div {
 		display: inline-block;
 }
+
 
 .dropzone {
 	background-color: #ccc;
