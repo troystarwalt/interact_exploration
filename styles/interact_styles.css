@@ -8,13 +8,16 @@ body {
 pieces to be dragged out of.*/
 #container {
 	margin: 0 auto;
-	width: 1080px;
+	width: 1500px;
 	background-color: pink;
 }
 
 /*Storing the divs prior to use.*/
 #toy-chest {
-	background-color: silver;
+	background-color: blue;
+	height: 800px;
+	float: left;
+	width: 300px;
 }
 
 /*Put our divs/elemtns in a nice order*/
@@ -25,12 +28,13 @@ pieces to be dragged out of.*/
 /*Pre-drop zone*/
 #parentszone {
 	border: 1px solid blue;
-	background-color: grey;
+	background-color: blue;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin: 0 auto;
 	width: 1000px;
 	height: 1000px;
+	float: left;
 }
 
 /*Drop zone*/
