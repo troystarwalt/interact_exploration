@@ -39,6 +39,7 @@ body{
 
 .draggable {
 	margin-left: 5px;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
